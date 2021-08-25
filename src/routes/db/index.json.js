@@ -1,14 +1,7 @@
-import DB from '$lib/database.js'
+import articles from '/articles.json';
 
 export async function get() {
-const articles = await DB.prepare('SELECT * FROM posts').all()
-
-    if (articles) {
-        return {
-            body: {
-                articles
-            }
-        }
+    return {
+        body: articles
     }
-   
 }
